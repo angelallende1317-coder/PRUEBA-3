@@ -93,7 +93,7 @@
 
         .f-card:hover .f-jefe { bottom: 0; }
 
-        /* BOTON MUSICA MEJORADO */
+        /* BOTON MUSICA */
         #music-btn {
             position: fixed;
             bottom: 25px;
@@ -125,7 +125,7 @@
 
 <button id="music-btn" onclick="controlarMusica()">
     <i id="icon-m" class="fas fa-play"></i> 
-    <span id="text-m">NO SE VE /CHINGON DESAKTA2</span>
+    <span id="text-m">PONER CUARTETO</span>
 </button>
 
 <div class="sticker-v fernet-v">
@@ -184,8 +184,8 @@
     </div>
 </div>
 
-<audio id="musica" loop>
-    <source src="musica.mp3" type="audio/mpeg">
+<audio id="musica" crossorigin="anonymous">
+    <source src="https://sc.mvy.com.ar:9964/stream" type="audio/mpeg">
 </audio>
 
 <script>
@@ -201,7 +201,7 @@
                 btnText.innerText = "PAUSAR";
                 btnIcon.classList.replace("fa-play", "fa-pause");
             }).catch(error => {
-                alert("Error: No se encuentra el archivo 'musica.mp3' en la carpeta.");
+                console.log("Error de reproducción");
             });
         } else {
             player.pause();
